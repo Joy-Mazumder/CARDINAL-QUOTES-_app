@@ -18,9 +18,9 @@ class MemorialCard extends StatelessWidget {
                   Icon(Icons.arrow_right_alt, color: Colors.white),
                   SizedBox(width: 6),
                   Text(
-                    "Top Quotes",
+                    "Memorial Cards",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),

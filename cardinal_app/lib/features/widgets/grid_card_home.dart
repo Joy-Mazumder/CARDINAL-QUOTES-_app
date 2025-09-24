@@ -1,5 +1,6 @@
 import 'package:cardinal_app/features/from_grid_to_screens/meditation_screen.dart';
 import 'package:cardinal_app/features/from_grid_to_screens/memorial_card.dart';
+import 'package:cardinal_app/features/from_grid_to_screens/sacred_journals.dart';
 import 'package:cardinal_app/features/from_grid_to_screens/save_screen.dart';
 import 'package:cardinal_app/features/screens/todo_screen.dart';
 import 'package:cardinal_app/utils/common/widgets/grid_lay.dart';
@@ -28,7 +29,9 @@ class HomeGridCard extends StatelessWidget {
           onTap: () { 
             if(index == 4) {
               Navigator.push(context, MaterialPageRoute(builder: (context) => MeditationScreen()));
-            }else if(index == 11) {
+            }else if(index == 10) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => JournalScreen()));   
+          }else if(index == 11) {
             Navigator.push(context, MaterialPageRoute(builder: (context) => TodoScreen()));   
           }else if(index == 12) {
             Navigator.push(context, MaterialPageRoute(builder: (context) => MemorialCard()));   
