@@ -58,9 +58,9 @@ class MoreScreen extends StatelessWidget {
             TSectionHeading(title: "Featured Quotes", onPressed: () {}),
             THorizontalImageList(
               images: [
-                "assets/images/fquote_1.png",
-                "assets/images/fquote_2.png",
-                "assets/images/fquote_3.png",
+                "assets/images/fquote_11.png",
+                "assets/images/fquote_21.png",
+                "assets/images/fquote_31.png",
               ],
               onTap: () {},
             ),
@@ -82,7 +82,7 @@ class MoreScreen extends StatelessWidget {
             SizedBox(
               width: 340,
               height: 132,
-              child: Image.asset("assets/images/home_announce.png"),
+              child: Image.asset("assets/images/home_announce_.png"),
             ),
             SizedBox(height: screenHeight * 0.03),
           ],
