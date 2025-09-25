@@ -1,4 +1,4 @@
-import 'package:cardinal_app/features/screens/joutnal_notes.dart';
+import 'package:cardinal_app/features/screens/journal_notes.dart';
 import 'package:cardinal_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

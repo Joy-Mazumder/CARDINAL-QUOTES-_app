@@ -1,4 +1,5 @@
 import 'package:cardinal_app/features/controllers/journal_detail_controller.dart';
+import 'package:cardinal_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -30,7 +31,7 @@ class JournalDetailScreen extends StatelessWidget {
 
                 /// Header
                 Positioned(
-                  top: 12,
+                  top: 22,
                   left: 12,
                   right: 12,
                   child: Row(
@@ -39,9 +40,9 @@ class JournalDetailScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () => Get.back(),
                         child: const Icon(Iconsax.arrow_left,
-                            color: Colors.brown, size: 28),
+                            color: MyColors.ogColor, size: 28),
                       ),
-                      const Icon(Icons.menu, color: Colors.brown, size: 28),
+                      const Icon(Icons.menu, color: MyColors.ogColor, size: 28),
                     ],
                   ),
                 ),
@@ -49,7 +50,7 @@ class JournalDetailScreen extends StatelessWidget {
                 /// Editable Title & Note
                 Positioned(
                   left: 20,
-                  top: size.height * 0.10,
+                  top: size.height * 0.14,
                   right: 20,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,9 +67,10 @@ class JournalDetailScreen extends StatelessWidget {
                                     controller: controller.titleController,
                                     autofocus: true,
                                     style: const TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.brown,
+                                      fontFamily: "Railway-Bold",
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      color: MyColors.ogColor,
                                     ),
                                     decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -81,9 +83,10 @@ class JournalDetailScreen extends StatelessWidget {
                               : Text(
                                   controller.titleController.text,
                                   style: const TextStyle(
-                                    fontSize: 22,
+                                    fontFamily: "Railway",
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.brown,
+                                    color: MyColors.ogColor,
                                   ),
                                 ),
                         );
@@ -105,7 +108,7 @@ class JournalDetailScreen extends StatelessWidget {
                                     maxLines: null,
                                     style: const TextStyle(
                                       fontSize: 16,
-                                      color: Colors.brown,
+                                      color: MyColors.ogColor,
                                     ),
                                     decoration: const InputDecoration(
                                       border: InputBorder.none,

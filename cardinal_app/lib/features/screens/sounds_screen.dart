@@ -36,7 +36,9 @@ class SoundsScreen extends StatelessWidget {
           child:Column(
             children: [
               MusicWiperCard(),
+              SizedBox(height: 10,),
               MusicWiperCard(outerBOXimage: "assets/images/slep_snd_an_1.png",),
+              SizedBox(height: 10,),
               MusicWiperCard(),
             ],
           ),

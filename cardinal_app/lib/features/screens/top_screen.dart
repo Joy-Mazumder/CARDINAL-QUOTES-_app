@@ -1,4 +1,5 @@
 import 'package:cardinal_app/features/reuseable_widgets/sound_screen_music_card.dart';
+import 'package:cardinal_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TopScreen extends StatelessWidget {
@@ -9,21 +10,36 @@ class TopScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             children: [
               // header
               Row(
-                children: const [
-                  Icon(Icons.arrow_right_alt, color: Colors.white),
-                  SizedBox(width: 6),
-                  Text(
-                    "Top Quotes",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          // Get.back();
+                          // Navigator.pop(context);
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      const Text(
+                        "Top Quotes",
+                        style: TextStyle(
+                          fontFamily: "Railway-SemiBold",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

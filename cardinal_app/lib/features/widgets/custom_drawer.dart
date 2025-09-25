@@ -8,58 +8,66 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 20, top: 40, right: 142, bottom: 20),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.78,
+    final size = MediaQuery.of(context).size;
+    final height = size.height;
+    final width = size.width;
 
+    return Padding(
+      padding: EdgeInsets.only(
+        left: width * 0.05,
+        top: height * 0.05,
+        right: width * 0.2,
+        bottom: height * 0.02,
+      ),
+      child: Container(
+        width: width,
         decoration: BoxDecoration(
           color: MyColors.bgContainer,
           borderRadius: BorderRadius.circular(20),
-        ), // background
+        ),
         child: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 12),
+            padding: EdgeInsets.symmetric(
+              vertical: height * 0.01,
+              horizontal: width * 0.03,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 120,
-
+                  height: height * 0.15,
                   child: Stack(
                     clipBehavior: Clip.none,
                     children: [
-                      /// Quote text
-                      /// 
+                      /// Close Button
                       Positioned(
                         top: 0,
                         right: 0,
                         child: IconButton(
                           icon: const Icon(Icons.close, color: MyColors.ogColor),
-                          onPressed: () {
-                            Navigator.of(context).pop(); 
-                          },
+                          onPressed: () => Navigator.of(context).pop(),
                         ),
                       ),
-                      
+
+                      /// Quote text
                       Positioned(
-                        top: 32,
+                        top: height * 0.04,
                         left: 0,
-                        right: -19, 
+                        right: -width * 0.05,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               '"Peace comes from within.\n    Do not seek it without."',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: MyColors.ogColor,
-                                fontSize: 15,
+                                fontSize: width * 0.05, // responsive
                                 fontFamily: "Railway-Medium",
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 4),
+                            SizedBox(height: height * 0.005),
                             Center(
                               child: Text(
                                 "Buddha",
@@ -67,7 +75,7 @@ class CustomDrawer extends StatelessWidget {
                                   color: MyColors.ogColor,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: "Railway-Bold",
-                                  fontSize: 13,
+                                  fontSize: width * 0.04, // responsive
                                 ),
                               ),
                             ),
@@ -75,34 +83,34 @@ class CustomDrawer extends StatelessWidget {
                         ),
                       ),
 
-                      /// First bird 
+                      /// First bird
                       Positioned(
-                        top: 54,
-                        right: 110,
-                        left: -15,
+                        top: height * 0.06,
+                        right: width * 0.5,
+                        left: -width * 0.01,
                         child: Image.asset(
                           "assets/images/bird_1.png",
-                          height: 90,
-                          width: 110,
+                          height: height * 0.18,
+                          width: width * 0.4,
                         ),
                       ),
 
-                      /// Second bird 
+                      /// Second bird
                       Positioned(
-                        top: 46,
-                        right: -10,
-                        left: 90,
+                        top: height * 0.08,
+                        right: -width * 0.05,
+                        left: width * 0.36,
                         child: Image.asset(
                           "assets/images/bird_2.png",
-                          height: 156,
-                          width: 124,
+                          height: height * 0.2,
+                          width: width * 0.3,
                         ),
                       ),
                     ],
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: height * 0.05),
 
                 // Drawer Items (unchanged)
                 _drawerItem(Icons.explore_outlined, "Explore", () {}),
@@ -123,26 +131,33 @@ class CustomDrawer extends StatelessWidget {
                 _drawerItem(Icons.card_giftcard, "Memorial Card", () {}),
                 _drawerItem(Icons.bookmark_border, "Save", () {}),
 
-                SizedBox(height: 10,),
+                SizedBox(height: height * 0.015),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  SignUpLoginScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  SignUpLoginScreen()),
+                    );
                   },
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Log Out",style: TextStyle(fontSize: 15,fontFamily: "Railway-Semibold",color: MyColors.ogColor),),
-                        SizedBox(width: 10,),
-                        Icon(Icons.logout),
-                      ]
-                      
-                      
+                        Text(
+                          "Log Out",
+                          style: TextStyle(
+                            fontSize: width * 0.054,
+                            fontFamily: "Railway-Semibold",
+                            color: MyColors.ogColor,
+                          ),
+                        ),
+                        SizedBox(width: width * 0.04),
+                        const Icon(Icons.logout),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-
+                SizedBox(height: height * 0.02),
               ],
             ),
           ),
@@ -155,7 +170,10 @@ class CustomDrawer extends StatelessWidget {
   Widget _drawerItem(IconData icon, String title, VoidCallback onTap) {
     return ListTile(
       leading: Icon(icon, color: MyColors.ogColor),
-      title: Text(title, style: const TextStyle(fontSize: 16)),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 16),
+      ),
       onTap: onTap,
     );
   }

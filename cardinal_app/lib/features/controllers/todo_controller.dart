@@ -24,18 +24,22 @@ class TodoController extends GetxController {
     // initial mock data
     todos.addAll([
       TodoItem(title: "Napa", subtitle: "Everyday At 6.00 Pm"),
-      TodoItem(title: "Viglimate", subtitle: "Everyday At 4.00 Pm", done: true),
+      TodoItem(
+        title: "Viglimate",
+        subtitle: "Everyday At 4.00 Pm Overdue",
+        overdue: true,
+        done: true,
+      ),
       TodoItem(title: "Napa", subtitle: "Everyday At 6.00 Pm"),
       TodoItem(title: "Viglimate", subtitle: "Everyday At 4.00 Pm", done: true),
       TodoItem(
-          title: "Napa",
-          subtitle: "Everyday At 4.00 Pm Overdue",
-          overdue: true),
+        title: "Napa",
+        subtitle: "Everyday At 4.00 Pm Overdue",
+        overdue: true,
+      ),
 
       TodoItem(title: "Montair 10", subtitle: "Everyday At 6.00 Pm"),
-    TodoItem(title: "Viglimate", subtitle: "Everyday At 4.00 Pm",),  
     ]);
-    
   }
 
   void addTodo(String title, String subtitle) {

@@ -203,12 +203,12 @@ class MusicWiperBelowMusicInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 4),
+        const SizedBox(height: 4.4),
 
         // Music Info
         showTitles
             ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1.2),
+                padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -228,7 +228,7 @@ class MusicWiperBelowMusicInfoCard extends StatelessWidget {
 
         // Tags
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 1.2),
+          padding: const EdgeInsets.symmetric(horizontal: 4),
           child: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
@@ -250,7 +250,7 @@ class MusicWiperBelowMusicInfoCard extends StatelessWidget {
           height: 30,
           color: isRemovable ? Color(0XFFFF522F) : Colors.transparent,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 1.2),
+            padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Row(
               children: [
                 Expanded(

@@ -1,5 +1,8 @@
 import 'package:cardinal_app/features/reuseable_widgets/sound_screen_music_card.dart';
+import 'package:cardinal_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class MemorialCard extends StatelessWidget {
   const MemorialCard({super.key});
@@ -9,21 +12,36 @@ class MemorialCard extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             children: [
               // header
               Row(
-                children: const [
-                  Icon(Icons.arrow_right_alt, color: Colors.white),
-                  SizedBox(width: 6),
-                  Text(
-                    "Memorial Cards",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                          // Navigator.pop(context);
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      const Text(
+                        "Memorial Cards",
+                        style: TextStyle(
+                          fontFamily: "Railway-SemiBold",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -37,7 +55,7 @@ class MemorialCard extends StatelessWidget {
               ),
               MusicWiperBelowMusicInfoCard(showTitles: false,isRemovable: false,),
               
-              
+              SizedBox(height: 10,),
               MusicWiperCard(
                 outerBOXimage: "assets/images/memry_2.png",
                 showInnerBox: false,
@@ -46,7 +64,7 @@ class MemorialCard extends StatelessWidget {
                 onTap: () {},
               ),
               MusicWiperBelowMusicInfoCard(showTitles: false,),
-
+              SizedBox(height: 10,),
               
               MusicWiperCard(
                 outerBOXimage: "assets/images/memry_3.png",

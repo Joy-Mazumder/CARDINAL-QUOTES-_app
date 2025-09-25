@@ -23,7 +23,7 @@ class MoreScreen extends StatelessWidget {
           children: [
             // Header part
             Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 42.0),
+              padding: const EdgeInsets.only(left: 20.0, top: 52.0),
               child: Row(
                 children: [
                   Builder(

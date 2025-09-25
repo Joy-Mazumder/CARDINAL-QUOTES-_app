@@ -143,7 +143,7 @@ class SignUpLoginScreen extends StatelessWidget {
                         /// Next Button
                         SizedBox(
                           height: 32,
-                          width: 84,
+                          width: 94,
                           child: ElevatedButton(
                             onPressed: () {Navigator.push(
                               context,

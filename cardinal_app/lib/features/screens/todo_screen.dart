@@ -35,7 +35,7 @@ class TodoScreen extends StatelessWidget {
           /// Foreground Scrollable To-do list
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -59,7 +59,7 @@ class TodoScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 14),
 
                   /// List
                   Expanded(

@@ -21,21 +21,26 @@ class SaveScreen extends StatelessWidget {
           children: [
             /// Arrow + Text
             Padding(
-              padding: const EdgeInsets.all(12),
-              child: Row(
-                children: const [
-                  Icon(Iconsax.arrow_left, color: MyColors.clsWhite),
-                  SizedBox(width: 6),
-                  Text(
-                    "Save",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Raleway-SemiBold",
-                      color: MyColors.clsWhite,
+              padding: const EdgeInsets.all(30),
+              child: InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Row(
+                  children: const [
+                    Icon(Iconsax.arrow_left, color: MyColors.clsWhite),
+                    SizedBox(width: 6),
+                    Text(
+                      "Save",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "Raleway-SemiBold",
+                        color: MyColors.clsWhite,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
 
@@ -98,7 +103,7 @@ class SaveScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
 
             /// Dynamic Content
             Expanded(
@@ -107,14 +112,14 @@ class SaveScreen extends StatelessWidget {
                   case 0:
                     return const Center(
                       child: Column(
-                        children: [MusicWiperCard(
-                          showInnerBox: true,
-                          showBelowCardASiTis: false,
-                        ),
-                        MusicWiperBelowMusicInfoCard(
-                          isRemovable: true,
-                        )
-          ]),
+                        children: [
+                          MusicWiperCard(
+                            showInnerBox: true,
+                            showBelowCardASiTis: false,
+                          ),
+                          MusicWiperBelowMusicInfoCard(isRemovable: true),
+                        ],
+                      ),
                     );
                   case 1:
                     return const Center(
@@ -131,7 +136,7 @@ class SaveScreen extends StatelessWidget {
                               showTitles: false,
                               isRemovable: false,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     );

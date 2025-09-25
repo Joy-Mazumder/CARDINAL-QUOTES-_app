@@ -1,5 +1,8 @@
 import 'package:cardinal_app/features/reuseable_widgets/sound_screen_music_card.dart';
+import 'package:cardinal_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SoulScreen extends StatelessWidget {
   const SoulScreen({super.key});
@@ -9,35 +12,53 @@ class SoulScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             children: [
               // header
               Row(
-                children: const [
-                  Icon(Icons.arrow_right_alt, color: Colors.white),
-                  SizedBox(width: 6),
-                  Text(
-                    "Soul Check-In",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          // Get.back();
+                          // Navigator.pop(context);
+                        },
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      const Text(
+                        "Soul Check-In",
+                        style: TextStyle(
+                          fontFamily: "Railway-SemiBold",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: MyColors.bgContainer,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              SizedBox(height: 16,),
-              
+
+              SizedBox(height: 16),
+
               MusicWiperCard(
                 outerBOXimage: "assets/images/memry_1.png",
                 showInnerBox: false,
                 showBelowCardASiTis: false,
                 onTap: () {},
               ),
-              MusicWiperBelowMusicInfoCard(showTitles: false,isRemovable: false,),
-              
-              
+              MusicWiperBelowMusicInfoCard(
+                showTitles: false,
+                isRemovable: false,
+              ),
+
               MusicWiperCard(
                 outerBOXimage: "assets/images/memry_2.png",
                 showInnerBox: false,
@@ -45,18 +66,15 @@ class SoulScreen extends StatelessWidget {
                 showInnerBoxText: true,
                 onTap: () {},
               ),
-              MusicWiperBelowMusicInfoCard(showTitles: false,),
+              MusicWiperBelowMusicInfoCard(showTitles: false),
 
-              
               MusicWiperCard(
                 outerBOXimage: "assets/images/memry_3.png",
                 showInnerBox: false,
                 showBelowCardASiTis: false,
                 onTap: () {},
               ),
-              MusicWiperBelowMusicInfoCard(showTitles: false,),
-
-
+              MusicWiperBelowMusicInfoCard(showTitles: false),
             ],
           ),
         ),
